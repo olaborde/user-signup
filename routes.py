@@ -7,7 +7,7 @@ def index():
   return render_template("index.html")
 
 @app.route("/signup")
-def about():
+def signup():
   return render_template("user-signup.html")
 
 
