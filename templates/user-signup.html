@@ -4,36 +4,58 @@
 <div class="container">
     <h2>Signup</h2>
 <div class="row">
-    <form class="col s12">
+    <form method="POST" action="/signup" class="col s12">
+        {{ form.hidden_tag() }}
         <div class="row">
             <div class="input-field col s12">
-               
+                {{ form.user_name.label }}
 
-                <input id="user_name" type="text" class="validate">
-                <label for="user_name">Username</label>
+                {% if form.user_name.errors %}
+                    {% for error in form.user_name.errors %}
+                        <p class="error-message">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+
+                {{ form.user_name }}
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="password" type="password" class="validate">
-                <label for="password">Password</label>
+                {{ form.password.label }}
+                {% if form.password.errors %}
+                    {% for error in form.password.errors %}
+                        <p class="error-message">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+                {{ form.password }}
             </div>
             <div class="input-field col s6">
-                <input id="password2" type="password" class="validate">
-                <label for="password">Verify Password</label>
+                {{ form.password.label }}
+
+                {% if form.password.errors %}
+                    {% for error in form.password.errors %}
+                        <p class="error-message">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+
+                {{ form.password }}
                 
             </div>
         </div>
 
-
         <div class="row">
             <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
-                <label for="email">Email(optional)</label>
+                {{ form.email.label }}
+                {% if form.email.errors %}
+                    {% for error in form.email.errors %}
+                        <p class="error-message">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+                {{ form.email }}
             </div>
         </div>
-
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+           
+        <button {{ form.submit(class="btn waves-effect waves-light") }} Submit
             <i class="material-icons right">send</i>
         </button>
 
