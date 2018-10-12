@@ -10,7 +10,7 @@
             <div class="input-field col s12">
                 {{ form.user_name.label }}
 
-                {% if form.user_name.errors %}
+                {% if form.user_name.errors %} 
                     {% for error in form.user_name.errors %}
                         <p class="error-message">{{ error }}</p>
                     {% endfor %}
@@ -30,15 +30,15 @@
                 {{ form.password }}
             </div>
             <div class="input-field col s6">
-                {{ form.password.label }}
+                {{ form.vpassword.label }}
 
-                {% if form.password.errors %}
-                    {% for error in form.password.errors %}
+                {% if form.vpassword.errors %}
+                    {% for error in form.vpassword.errors %}
                         <p class="error-message">{{ error }}</p>
                     {% endfor %}
                 {% endif %}
 
-                {{ form.password }}
+                {{ form.vpassword }}
                 
             </div>
         </div>
