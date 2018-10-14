@@ -17,6 +17,16 @@
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous"> -->
   </head>
   <body>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+          {% for message in messages %}
+            <h3>{{message}}</h3>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      {% endwith %}
+
       {% block content %}
       {% endblock %}
       
