@@ -3,7 +3,21 @@
 {% block content %}
 <div class="container">
     <h2>Signup</h2>
+    {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+    {% endif %}
+
+  
 <div class="row">
+    <!-- {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+          {% for message in messages %}
+            <h3>{{message}}</h3>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      {% endwith %} -->
     <form method="POST" action="/signup" class="col s12">
         {{ form.hidden_tag() }}
         <div class="row">
