@@ -27,7 +27,10 @@ def signup():
                   return redirect(url_for('signup'))
             elif len(request.form['password']) < 3 or len(request.form['password']) > 20:
                 flash('password must between 3 or 20 characters!')
-                return redirect(url_for('signup'))    
+                return redirect(url_for('signup')) 
+            elif len(request.form['user_name']) < 3 or len(request.form['user_name']) > 20:
+                flash('username must between 3 or 20 characters!')
+                return redirect(url_for('signup'))     
             else:    
               return 'Welcome, ' + request.form['user_name']    
   elif request.method == 'GET':   
