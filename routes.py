@@ -23,11 +23,17 @@ def signup():
       else:
             if request.form['password'] != request.form['vpassword']:
                   # error = 'Password must match'
-                  flash('Password must match!')
+                  flash('Passwords must match!')
                   return redirect(url_for('signup'))
             elif len(request.form['password']) < 3 or len(request.form['password']) > 20:
                 flash('password must between 3 or 20 characters!')
-                return redirect(url_for('signup')) 
+                return redirect(url_for('signup'))
+            elif ' ' in (request.form['password']).strip() == True:
+                flash('No spaces allowed!')
+                return redirect(url_for('signup'))
+            elif ' ' in (request.form['user_name']).strip() == True:
+                flash('No spaces allowed in username!')
+                return redirect(url_for('signup'))
             elif len(request.form['user_name']) < 3 or len(request.form['user_name']) > 20:
                 flash('username must between 3 or 20 characters!')
                 return redirect(url_for('signup'))     
