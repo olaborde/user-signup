@@ -1,5 +1,5 @@
 # user-signup
 
-Signup mockup page
+Signup mockup page with python backend (Flask) validation
 
-> Deployed at:  https://olaborde.github.io/user-signup/
+Note: will be deployed soon
